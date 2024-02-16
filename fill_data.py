@@ -82,12 +82,12 @@ def insert_data_to_db(students, lecturers, student_group, subjects, grades):
         cur.executemany(sql_to_lecturers, [(lecturer,) for lecturer in lecturers])
 
 
-#         # sql_to_student_group = """
-#         #     INSERT INTO student_group(student_name, group_name)
-#         #     VALUES (?, ?)
-#         # """
-#         # cur.executemany(sql_to_student_group, [(student, group_name) for student, group_name in zip(students, student_group)])
-# ### student_group = list(zip(fake_students, fake_groups))
+        sql_to_student_group = """
+            INSERT INTO student_group(student_name, group_name)
+            VALUES (?, ?)
+        """
+        cur.executemany(sql_to_student_group, [(student, group_name) for student, group_name in zip(students, student_group)])
+
 
 
         sql_to_subjects = """
