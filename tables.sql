@@ -12,13 +12,15 @@ CREATE TABLE lecturers (
     lecturer_name VARCHAR(255) UNIQUE NOT NULL
 
 );
+
+
 -- Table: student_group
 DROP TABLE IF EXISTS student_group;
 CREATE TABLE student_group (
     group_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    group_name INTEGER,
-    student_id INTEGER,
-    FOREIGN KEY (student_id) REFERENCES students(student_id)
+    group_name TEXT,
+    student_name TEXT,
+    FOREIGN KEY (student_name) REFERENCES students(student_name)
       ON DELETE CASCADE
       ON UPDATE CASCADE
 );
@@ -41,7 +43,7 @@ CREATE TABLE grades (
     grade_id INTEGER PRIMARY KEY AUTOINCREMENT,
     student_id INTEGER,
     grade FLOAT,
-    grade_date DATE NOT NULL,
+    grade_date DATE,
     subject_name VARCHAR(100),
     FOREIGN KEY (student_id) REFERENCES students(student_id)
       ON DELETE CASCADE
