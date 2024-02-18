@@ -20,7 +20,11 @@ CREATE TABLE student_group (
     group_id INTEGER PRIMARY KEY AUTOINCREMENT,
     group_name TEXT,
     student_name TEXT,
+    student_id INTEGER,
     FOREIGN KEY (student_name) REFERENCES students(student_name)
+      ON DELETE CASCADE
+      ON UPDATE CASCADE,
+    FOREIGN KEY (student_id) REFERENCES students(student_id)
       ON DELETE CASCADE
       ON UPDATE CASCADE
 );
