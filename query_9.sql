@@ -1,10 +1,10 @@
-SELECT DISTINCT
+SELECT
     subjects.subject_name
 FROM
-    student_group
+    subjects
 JOIN
-    grades ON student_group.student_id = grades.student_id
+    grades ON subjects.subject_name = grades.subject_name
 JOIN
-    subjects ON grades.subject_name = subjects.subject_name
+    students ON grades.student_id = students.student_id
 WHERE
-    student_group.student_name = 'Jake Aguilar';
+    students.student_name = 'Paul Crane';

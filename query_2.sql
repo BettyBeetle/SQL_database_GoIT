@@ -7,7 +7,7 @@ FROM
 JOIN
     grades ON students.student_id = grades.student_id
 WHERE
-    grades.subject_name = 'Fundamental motivating parallelism'
+    grades.subject_name = 'Optimized real-time paradigm'
 GROUP BY
     students.student_id,
     students.student_name

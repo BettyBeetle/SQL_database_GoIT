@@ -36,9 +36,14 @@ CREATE TABLE subjects (
     subject_id INTEGER PRIMARY KEY AUTOINCREMENT,
     subject_name VARCHAR(100) UNIQUE NOT NULL,
     lecturer_id INTEGER,
+    lecturer_name VARCHAR(100),
     FOREIGN KEY (lecturer_id) REFERENCES lecturers(lecturer_id)
       ON DELETE CASCADE
+      ON UPDATE CASCADE,
+    FOREIGN KEY (lecturer_name) REFERENCES lecturers(lecturer_name)
+      ON DELETE CASCADE
       ON UPDATE CASCADE
+      
 );
 
 -- Table: grades

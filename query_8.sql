@@ -1,13 +1,15 @@
 SELECT
     subjects.subject_name,
     lecturers.lecturer_name,
-    ROUND(AVG(grades.grade), 2) AS average_grade
+    AVG(grades.grade) AS average_grade
 FROM
-    grades
-JOIN
-    subjects ON grades.subject_name = subjects.subject_name
+    subjects
 JOIN
     lecturers ON subjects.lecturer_id = lecturers.lecturer_id
+JOIN
+    grades ON subjects.subject_name = grades.subject_name
+WHERE
+    subjects.subject_name = 'Assimilated holistic data-warehouse' AND
+    lecturers.lecturer_name = 'Kevin White'
 GROUP BY
-    subjects.subject_name,
-    lecturers.lecturer_name;
+    subjects.subject_name, lecturers.lecturer_name;

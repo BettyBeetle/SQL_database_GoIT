@@ -4,6 +4,8 @@ SELECT
 FROM
     student_group
 JOIN
-    grades ON student_group.student_id = grades.student_id
+    students ON student_group.student_name = students.student_name
+JOIN
+    grades ON students.student_id = grades.student_id
 GROUP BY
     student_group.group_name;

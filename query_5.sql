@@ -1,15 +1,16 @@
--- SELECT
---     lecturers.lecturer_id,
---     lecturers.lecturer_name,
--- FROM
+-- SELECT 
+--     subjects.subject_name
+-- FROM 
 --     subjects
--- JOIN
---     subjects ON lecturers.lecturer_id = subjects.lecturer_id 
--- GROUP BY
---     lecturers.lecturer_id;
+-- JOIN 
+--     lecturers ON subjects.lecturer_id = lecturers.lecturer_id
+-- WHERE 
+--     lecturers.lecturer_name = 'Crystal Ramirez';
+
+
 SELECT
     subject_name
 FROM
     subjects
 WHERE
-    lecturer_id = (SELECT lecturer_id FROM lecturers WHERE lecturer_name = 'Karen Lawson MD');
+    lecturer_id = 'Laura Ryan';

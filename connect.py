@@ -56,18 +56,19 @@ if __name__ == "__main__":
     file_path_10 = 'query_10.sql' 
     query_10 = read_sql_query(file_path_10)
 
+
 top_students_1 = get_results_of_query(query_1)
 print("\nQuery_1: Top 5 students with highest average grades:")
 for student in top_students_1:
     print(f"Student ID: {student[0]}, Name: {student[1]}, Average Grade: {student[2]}")  
     
 top_students_2 = get_results_of_query(query_2)
-print("\nQuery_2:Student with the highest average grades with 'Fundamental motivating parallelism':")
+print("\nQuery_2: Student with the highest average grades with 'Optimized real-time paradigm':")
 for student in top_students_2:
     print(f"Student ID: {student[0]}, Name: {student[1]}, Average Grade: {student[2]}")
 
 top_students_3 = get_results_of_query(query_3)
-print("\nQuery_3: Average grades with 'Fundamental motivating parallelism:")
+print("\nQuery_3: Average grades for groups with 'Diverse uniform emulation':")
 for student_group in top_students_3:
     print(f"Group: {student_group[0]}, Average Grade: {student_group}")
 
@@ -76,31 +77,32 @@ print("\nQuery_4: Average grades for groups:")
 for student_group in top_students_4:
     print(f"Group: {student_group[0]}, Average Grade: {student_group}")
 
-top_students_5 = get_results_of_query(query_5)  ### nie działa
-print("\nQuery_5:")
-# for student_group in top_students_5:
-#     print(f"Lecturer: {lecturers[0]}, Subject: {subjects}")
-print(top_students_5)
+top_students_5 = get_results_of_query(query_5)  ###
+print("\nQuery_5:Subjects of Laura Ryan:")
+for subject in top_students_5:
+    print(f"Subject: {subject}")
 
 top_students_6 = get_results_of_query(query_6) 
-print("\nQuery_6: List of students of group 1:")
+print("\nQuery_6: List of students of group 2:")
 for student in top_students_6:
     print(f"Student Name: {student}")  
 
 top_students_7 = get_results_of_query(query_7) 
-print("\nQuery_7: Students grades of group 2 :")
+print("\nQuery_7: Students grades of group 2 with 'Public-key explicit conglomeration':")
 for student in top_students_7:
-    print(f" {student}")  
+    print(f"Student ID: {student[0]}, Name: {student[1]}, Grades: {student[2]}")   
 
-top_students_8 = get_results_of_query(query_8) ### nie działa
-print("\nQuery_8: ")
+top_students_8 = get_results_of_query(query_8) 
+print("\nQuery_8: Average grade given by Kevin White in a the Assimilated holistic data-warehouse:")
 print(top_students_8)
 
 top_students_9 = get_results_of_query(query_9) 
-print("\nQuery_9: Courses attended by the student:")
-for course in top_students_9:
-    print(course)
+print("\nQuery_9: Courses attended by the Paul Crane:")
+for subject in top_students_9:
+        print(f"Subject: {subject[0]}")
+
 
 top_students_10 = get_results_of_query(query_9) 
-print("\nQuery_10: ")
-print(top_students_10)
+print("\nQuery_10: Classes conducted by Kevin White for Ryan Rodriguez ")
+for subject in top_students_10:
+        print(f"Subject: {subject[0]}")

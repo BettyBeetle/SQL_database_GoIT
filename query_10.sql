@@ -9,5 +9,5 @@ JOIN
 JOIN
     student_group ON grades.student_id = student_group.student_id
 WHERE
-    lecturers.lecturer_name = 'Terry Estrada'
-    AND student_group.student_name = 'Jake Aguilar';
+    lecturers.lecturer_name = 'Kevin White'
+    AND student_group.student_name = 'Ryan Rodriguez';

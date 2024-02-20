@@ -16,7 +16,6 @@ def generate_fake_data(
     fake_lecturers = []
     fake_groups = []
     fake_subjects = []
-    fake_grades = []
     fake_data_for_grades = []
     
     fake_data = faker.Faker()
@@ -31,7 +30,7 @@ def generate_fake_data(
         fake_lecturers.append(fake_data.name())                     # generowanie od 3 do NUMBER_LECTURERS imion wykładowców
 
 
-    for subject_id in range(random.randint(5, number_subjects + 1)):
+    for _ in range(random.randint(5, number_subjects + 1)):
         fake_subjects.append(
             (
                 fake_data.catch_phrase(),                               # generuje od 5 do NUMBER_SUBJECTS losowych przedmiotów
@@ -41,17 +40,25 @@ def generate_fake_data(
 
     
     for student_id in range(1, len(fake_students) + 1):
+        
+        student_subjects = set()
         for _ in range(random.randint(15, 20)):                             # generuje od 15 do 20 ocen dla każdego studenta
-            fake_grades.append(float(fake_data.random_int(2, 5)))           # generuje losowe oceny z przedziału 2-5
-            grade_date = datetime(2023, 10, random.randint(1, 31)).date()   # generuje loswą datę z października 2023
-            fake_data_for_grades.append(                                    # przekazuje informacje związane z oceną
-                (
-                    student_id,
-                    random.choice(fake_grades),
-                    grade_date,
-                    random.choice(fake_subjects[0]),
-                )
-            )
+            fake_grades =[]
+            for subject in fake_subjects:
+                subject_name = subject[0]
+
+                if subject_name  not in student_subjects:
+                    student_subjects.add(subject_name)
+                    fake_grades.append(float(fake_data.random_int(2, 5))) 
+                    grade_date = datetime(2023, 10, random.randint(1, 31)).date()   # generuje loswą datę z października 2023
+                    fake_data_for_grades.append(                                    # przekazuje informacje związane z oceną
+                        (
+                            student_id,
+                            fake_grades[-1],
+                            grade_date,
+                            subject_name,
+                        )
+                    )
 
 
     return (
